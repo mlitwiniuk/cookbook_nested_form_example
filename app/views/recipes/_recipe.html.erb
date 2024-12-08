@@ -1,0 +1,14 @@
+<div id="<%= dom_id recipe %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= recipe.name %>
+  </p>
+  <div class="flex flex-col gap-1 text-sm">
+    <span class="text-neutral-800">Ingredients:</span>
+    <ul>
+      <% recipe.ingredients.each do |ingredient| %>
+        <li><span class="font-medium"><%= ingredient.quantity %> <%= ingredient.unit %> <%= ingredient.name %></span></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

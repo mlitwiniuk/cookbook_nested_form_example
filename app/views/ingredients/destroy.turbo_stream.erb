@@ -1,0 +1,8 @@
+<%- id = "#{dom_id(@ingredient)}-field" %>
+<% if @ingredient.persisted? %>
+  <%= turbo_stream.update id do %>
+    <%= hidden_field_tag "recipe[ingredients_attributes][#{@ingredient.fallback_id}][_destroy]", "1" %>
+  <% end %>
+<% else %>
+  <%= turbo_stream.remove id %>
+<% end %>

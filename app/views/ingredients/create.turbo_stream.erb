@@ -1,0 +1,6 @@
+<%= turbo_stream.append "ingredients" do %>
+  <%- idx = Time.current.to_i %>
+  <%= fields_for "recipe[ingredients_attributes]", @ingredient, index: idx do |ff| %>
+    <%= render "ingredients/form_field", f: ff, fallback_id: idx %>
+  <% end %>
+<% end %>
